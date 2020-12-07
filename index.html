@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List Client</title>
+</head>
+<body>
+
+
+<!-- Add one -->
+<h2>Add One</h2>
+<label >Grocery Item Name: </label><br>
+<label >Item Name: </label>
+<input type="text" id="grocItemAdd" name="grocName" value="Milk" required>
+<br>
+<label >Item Quantity: </label>
+<input type="number" id="grocNumAdd" name="grocNum" value="1" required>
+<br>
+<label >Item Price: </label>
+<input type="number" id="grocPriceAdd" name="grocPrice" value="3.00" step=".01" required>
+<br>
+<input type="submit" value="Add" onclick="addoneDoc(grocItemAdd.value, grocPriceAdd.value, grocNumAdd.value)">
+<div id='resultAdd'>result</div>
+
+<!-- Delete Document -->
+<h2>Delete</h2>
+<label >Grocery Item: </label><br>
+<input type="text" id="grocItemName"  value="Milk" required>
+<input type="submit" value="Submit" onclick="deleteDoc(grocItemName.value)">
+<div id='delResult'>Result: </div>
+
+
+<!-- Get all -->
+<h2>Get All Grocery Items</h2>
+<input type="submit" value="Submit" onclick="getallDocs()">
+<hr>
+<br>
+<table id="getAllID">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Food Item</th>
+        <th>Number of Items</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tr>
+    </tbody>
+</table>
+<hr>
+
+
+
+<!-- Get one -->
+<h2>Get One</h2>
+<label >Grocery Item ID: </label><br>
+<input type="number" id="getOneID"  value="1" required>
+<br>
+<input type="submit" value="Submit" onclick="getoneDoc(getOneID.value)">
+<hr>
+<br>
+<p>Item Name: <span id="getOneItem"></span></p>
+
+<p>Number of Items: <span id="getOneNum"></span></p>
+<p>Price of Item: <span id="getOnePrice"></span></p>
+<p>Result: <span id='resultGetOne'></span></p>
+
+
+<!-- Update -->
+<h2>Update Item</h2>
+<label >Grocery Item ID: </label>
+<input type="number" id="grocID" value="1" required>
+<br>
+<label >Item Name: </label>
+<input type="text" id="grocItemUp" name="grocName" value="Milk" required>
+<br>
+<label >Item Quantity: </label>
+<input type="number" id="grocNumUp" name="grocNum" value="1" required>
+<br>
+<label >Item Price: </label>
+<input type="number" id="grocPriceUp" name="grocPrice" value="3.00" step=".01" required>
+<br>
+<br>
+<input type="submit" value="Submit" onclick="updateoneDoc(grocID.value, grocItemUp.value, grocPriceUp.value, grocNumUp.value)">
+<div id='resultUpdate'>Result</div>
+
+<script src="script.js"></script>
+</body>
+</html>
